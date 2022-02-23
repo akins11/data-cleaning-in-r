@@ -1,10 +1,11 @@
-# Libraries ===================================================================|
+# Libraries 
 library(tidyverse) |> suppressPackageStartupMessages()
-library(jsonlite) |> suppressPackageStartupMessages()
+library(jsonlite)  |> suppressPackageStartupMessages()
 
-# Data ========================================================================|
-data <- read_csv("uncleaned data\tmdb_5000_movies.csv")
+# Data 
+data <- read_csv("uncleaned data/movies.csv")
 
+ 
 names(data)
 
 # The class of the json columns are all characters.
@@ -110,4 +111,5 @@ data %>%
   unnest(cols = production_companies) %>%
   unnest(cols = production_countries)
 
+# saving changes
 write_csv(data, "movies.csv")
